@@ -1,1 +1,1 @@
-See [CONTRIBUTING.md](https://github.com/valkyrienyanko/The-MMORPG-Project/blob/master/.github/CONTRIBUTING.md)
+See [CONTRIBUTING.md](https://github.com/The-MMORPG-Project/Web-Server/blob/master/.github/CONTRIBUTING.md)

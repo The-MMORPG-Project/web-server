@@ -1,39 +1,55 @@
 const elements = {
     username: id('username'),
     password: id('password'),
-    submit: id('submit'),
-    message: id('message')
+    submit: id('submit')
 }
 
+const formElements = [username, password]
+
 elements.submit.addEventListener('click', () => {
-    const username = elements.username.value
-    const password = elements.password.value
+    resetClasses(formElements)
+    setTimeout(() => {
+        if (!validateForm()) {
+            return
+        }
+
+        sendForm()
+    }, 1)
+})
+
+const validateForm = () => {
+    removeMessage('notifyUsername')
+    removeMessage('notifyPassword')
+
+    return [
+        verifyUsername(elements.username),
+        verifyPassword(elements.password)
+    ].every(v => v)
+}
+
+const sendForm = () => {
+    console.log("Sending login request to server...")
 
     axios.post('/api/login', {
-        username,
-        password
+        username: elements.username.value,
+        password: elements.password.value
     }).then((response) => {
         const data = response.data
 
         if (data.status === StatusCode.LOGIN_DOESNT_EXIST) {
-            updateMessage('Login doesn\'t exist')
+            updateServerMessage('Login does not exist')
             return
         }
 
         if (data.status === StatusCode.LOGIN_WRONG_PASSWORD) {
-            updateMessage('Wrong password')
+            updateServerMessage('Wrong password')
             return
         }
 
         if (data.status === StatusCode.LOGIN_SUCCESS) {
-            updateMessage('Login success')
-            return
+            updateServerMessage('Login successful!')
         }
     }).catch((error) => {
         console.log(error)
     })
-})
-
-function updateMessage(message) {
-    elements.message.innerHTML = message
 }

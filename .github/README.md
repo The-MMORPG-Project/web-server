@@ -1,8 +1,7 @@
 ## Setup
 1. Install and setup [MySQL](https://dev.mysql.com/downloads/installer/) (preferably setup on a remote dedicated machine)
-2. Navigate to the web directory
 3. Install dependencies with `yarn install`
-4. Create `.env` file in Web root folder and fill following variables inside
+4. Create `.env` file in Web-Server root directory and fill following variables inside
 ```
 DB_HOST=xxx.xxx.xxx.xxx
 DB_USER=xxxxx

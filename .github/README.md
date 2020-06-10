@@ -9,4 +9,4 @@ DB_USER=xxxxx
 DB_PASSWORD=xxxxxxx
 ```
 5. Populate the `src/releases` folder with build(s) from the Unity standalone. (The folder must be called `latest` and must be compressed to a zip called `latest.zip` in the respective platform folder under releases in order for the Launcher to correctly retrieve the standalone)
-6. Run server with `yarn dev:start` (protip: just use `yarn start` if you want to start without compiling tsc)
+6. Run server with `yarn dev:start`

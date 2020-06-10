@@ -1,11 +1,3 @@
-## Roadmap
-- [x] Website
-    - [ ] Splash Page with Download Launcher Button
-    - [ ] Register / Login Pages
-- [x] MySQL Database
-- [x] User Authentication
-- [ ] Secure Transactions for Digital Goods
-
 ## Setup
 1. Install and setup [MySQL](https://dev.mysql.com/downloads/installer/) (preferably setup on a remote dedicated machine)
 3. Install dependencies with `yarn install`

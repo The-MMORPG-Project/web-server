@@ -48,10 +48,17 @@ const init = async () => {
     res.json({ message: "Welcome to the web server API" })
   })
 
-  app.get("/api/releases/:platform/:version", (req, res) => {
+  app.get("/api/releases/launcher/:platform/:version", (req, res) => {
     const platform = req.params.platform
     const version = req.params.version
-    const file = `./src/releases/${platform}/${version}`
+    const file = `./src/releases/launcher/${platform}/${version}`
+    res.download(file)
+  })
+
+  app.get("/api/releases/client/:platform/:version", (req, res) => {
+    const platform = req.params.platform
+    const version = req.params.version
+    const file = `./src/releases/client/${platform}/${version}`
     res.download(file)
   })
 
